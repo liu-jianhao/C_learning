@@ -1,4 +1,4 @@
-#include<stdio.h>
+ï»¿#include<stdio.h>
 struct Node
 {
 	int root; 
@@ -13,15 +13,15 @@ int main()
 	struct Node node[N];
 	
 	int i;
-	for(i = 0; i < N; i ++)		//³õÊ¼»¯½Úµã 
+	for(i = 0; i < N; i ++)		//åˆå§‹åŒ–èŠ‚ç‚¹ 
 	{
-		node[i].root = 1;		//×÷ÎªÅÐ¶ÏÊÇ·ñÎª¿Õ½ÚµãµÄ±êÖ¾ 
+		node[i].root = 1;		//ä½œä¸ºåˆ¤æ–­æ˜¯å¦ä¸ºç©ºèŠ‚ç‚¹çš„æ ‡å¿— 
 		node[i].left = -1;
 		node[i].right = -1;	
 	}
 	
 	char ch1, ch2;
-	for(i = 0; i < N; i ++)   	//½¨Ê÷ 
+	for(i = 0; i < N; i ++)   	//å»ºæ ‘ 
 	{
 		scanf("\n%c %c", &ch1, &ch2);
 		if(ch1 != '-')
@@ -44,22 +44,22 @@ int main()
 			root = i;
 	} 
 		
-	//ÓÃ²ãÐò±éÀúÀ´Êä³ö´ÓÉÏÖÁÏÂÊä³öÒ¶½Úµã	¶ÓÁÐÊµÏÖ 
+	//ç”¨å±‚åºéåŽ†æ¥è¾“å‡ºä»Žä¸Šè‡³ä¸‹è¾“å‡ºå¶èŠ‚ç‚¹	é˜Ÿåˆ—å®žçŽ° 
 	int queue[N];
 	int front = 0, rear = 0; 
-	queue[rear++] = root;		//¸ù½ÚµãÈë¶Ó 
+	queue[rear++] = root;		//æ ¹èŠ‚ç‚¹å…¥é˜Ÿ 
 	while(rear - front)
 	{
-		int first = queue[front++];		//¶ÓÊ×½Úµã³ö¶Ó
-		if(node[first].left == -1 && node[first].right == -1)		//Ò¶½ÚµãÊä³ö 
+		int first = queue[front++];		//é˜Ÿé¦–èŠ‚ç‚¹å‡ºé˜Ÿ
+		if(node[first].left == -1 && node[first].right == -1)		//å¶èŠ‚ç‚¹è¾“å‡º 
 		{
 			printf("%d ",first);
 		} 
-		if(node[first].left != -1)		//´æÔÚ×ó½Úµã 
+		if(node[first].left != -1)		//å­˜åœ¨å·¦èŠ‚ç‚¹ 
 		{
 			queue[rear++] = node[first].left; 
 		}
-		if(node[first].right != -1)		//´æÔÚÓÒ½Úµã
+		if(node[first].right != -1)		//å­˜åœ¨å³èŠ‚ç‚¹
 		{
 			queue[rear++] = node[first].right;
 		} 
